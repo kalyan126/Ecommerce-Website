@@ -6,7 +6,7 @@ pipeline {
       steps {
         checkout([$class: 'GitSCM', 
           branches: [[name: 'master']],
-          userRemoteConfigs: [[url: 'https://github.com/kalyan126/Ecommerce-Website.git']]
+          userRemoteConfigs: [[url: 'https://github.com/kalyan126/Ecommerce-Website.git']] # updating the github URL
         ])
       }
     }
