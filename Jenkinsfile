@@ -6,7 +6,7 @@ pipeline {
       steps {
         checkout([$class: 'GitSCM', 
           branches: [[name: 'master']],
-          userRemoteConfigs: [[url: 'https://github.com/kalyan126/Ecommerce-Website/tree/main/Online-Shopping-App-dev/frontendshopeazy_project']]
+          userRemoteConfigs: [[url: 'https://github.com/kalyan126/Ecommerce-Website.git']]
         ])
       }
     }
