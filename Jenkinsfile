@@ -21,7 +21,7 @@ pipeline {
                             configName: 'ansible',
                             transfers: [
                                 sshTransfer(
-								    sshTransfer(cleanRemote: true, execCommand:'git clone https://github.com/kalyan126/Ecommerce-Website.git', remoteDirectory: '/opt/docker'),
+		                    execCommand:' cd /opt/docker && git clone https://github.com/kalyan126/Ecommerce-Website.git',
                                     execTimeout: 120000
                                 )
                             ]
