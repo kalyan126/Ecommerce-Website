@@ -15,7 +15,7 @@ pipeline {
         
         stage('Deploy to Server') {
             steps {
-                sshPublisher(publishers: [sshPublisherDesc(configName: 'ansible-controlnode',
+                sshPublisher(publishers: [sshPublisherDesc(configName: 'ansible',
                                                           transfers: [sshTransfer(
                                                               execCommand: "rsync -ravz --delete ${env.WORKSPACE}/ ansibleadmin@172.31.15.115:/opt/docker",
                                                               remoteDirectory: "/opt/docker")])])
