@@ -1,78 +1,121 @@
 {% extends 'shopeazy/base.html' %}
 
 {% load static %}
-{% block content %}
-<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-        </ol>
-        <!--
+
+
+{%block carousal%}
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel" >
+  <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+      </ol>
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="{% static 'images/black-friday.jpg' %}"class="d-block w-100" alt="deal-1">
-            <div class="carousel-caption d-none d-md-block">
-            </div>
+            <img class="d-block h-30 w-100" style="height:500px;" src="https://images-na.ssl-images-amazon.com/images/G/15/books/events/hol22/No_1_Billboard_Desktop.jpg" alt="First slide">
           </div>
           <div class="carousel-item">
-            <img src="{% static 'images/home.jpeg' %}" class="d-block w-100" alt="deal2">
-            <div class="carousel-caption d-none d-md-block">
-            </div>
+            <img class="d-block h-30 w-100"  style="height:500px;" src="https://images-na.ssl-images-amazon.com/images/G/15/electronics/AMZ_CA_GOWR_PS5HWBundle_Promo_VGHomepage_BillboardBanner_CA_60.jpg" alt="Second slide">
           </div>
           <div class="carousel-item">
-            <img src="{% static 'images/apple.jpeg' %}" class="d-block w-100" alt="deal3">
-            <div class="carousel-caption d-none d-md-block">
-            </div>
+            <img class="d-block h-30 w-100"  style="height:500px;" src="https://cdn.zouton.com/images/originals/blog/BANNER5_1603968920.png" alt="Third slide">
           </div>
-        -->
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="d-block h-50 w-100" src="{% static 'images/coursel1.jpg' %}" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block h-50 w-100" src="{% static 'images/couresel2.jpg' %}" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block h-50 w-100" src="{% static 'images/black-friday.jpg' %}"  alt="Third slide">
-            </div>
+          <div class="carousel-item">
+            <img class="d-block h-30 w-100" style="height:500px;" src="{% static '/images/hero-1.jpg' %}"  alt="Fourth slide">
           </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
         </div>
-        </div>
-
-        
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      </div>
 </div>
-<!-- needs to change background-color of all screen -->
-<div id='products' class="col-lg-12 mx-auto">
-    <div class="row  mx-auto ">
-        {% for product in products %}
-        <div class="col-lg-3 card-block mt-2 prd" id={{product.productid}} style="width:15rem; ;">
-          <img class="card-img-top" src="{{product.image}}" height=300px width= 200px alt="Card image cap">
-            <div class="card-body text-center" style = "background-color: white">
-              <hr>
-              <p class="card-title"><a style="color:black;" href="/product/{{product.productid}}">{{product.pname}}</a></p>
-              <p class="card-text" ><b>$</b><b>{{product.price}}</b></p>
-            </div>
-            <div style="background-color: rgb(16, 20, 24) ;" class="card-footer w-100">
-              <input type="hidden" value="1" class="form-control product-qty-{{product.productid}}" id="productQty" />
-              <input type="hidden" class="product-image-{{product.productid}}" value="{{product.image}}" />
-              <input type="hidden" class="product-id-{{product.productid}}" value="{{product.productid}}" />
-              <input type="hidden" class="product-pname-{{product.productid}}" value="{{product.pname}}" />
-              <input type="hidden" class="product-price-{{product.productid}}" value="{{product.price}}" />
-              <!-- <button class="btn btn-sm btn-primary add-to-cart" data-index="{{product.id}}"><i class="fa fa-shopping-cart"></i></button> -->
-              <div class="text-center"><button class="btn btn-success mt-auto add-to-cart" data-index="{{product.productid}}">Add to cart</button></div>
-            </div>
-        </div>
-       {% endfor %}
+{%endblock%}
+{% block content %}
+
+{% comment %} <section class="hero" >
+  <div class="hero__slider owl-carousel">
+      <div class="hero__items set-bg" style="background-image:url('https://static.zara.net/photos///contents/mkt/spots/ss23-home-home-kids/subhome-xmedia-11//w/2880/IMAGE-landscape-fill-3e061fa0-8a68-4614-9a7d-8d615cf456ef-default_0.jpg?ts=1678981916123') ;">
+          <div class="container">
+              <div class="row">
+                  <div class="col-xl-5 col-lg-7 col-md-8">
+                      <div>
+                          <h4>Fun Collection</h4>
+                          <h1>Games</h1>
+                          <h4>A specialist label creating Game Collections. Ethically crafted with an unwavering
+                          commitment to exceptional quality.</h4>
+                          <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                          <div>
+                              <a href="#"><i class= "fa fa-facebook"></i></a>
+                              <a href="#"><i class="fa fa-twitter"></i></a>
+                              <a href="#"><i class="fa fa-pinterest"></i></a>
+                              <a href="#"><i class="fa fa-instagram"></i></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="hero__items set-bg" style="background-image:url('https://static.zara.net/photos///contents/mkt/spots/ss23-home-fragrances/subhome-xmedia-12//w/2880/IMAGE-landscape-fill-3c165d21-204d-40ee-b104-c73910887aee-default_0.jpg?ts=1679484359337') ;">
+          <div class="container">
+              <div class="row">
+                  <div class="col-xl-5 col-lg-7 col-md-8">
+                      <div style="padding-left:0px;">
+                          <h4>Lifestyle Collection</h4>
+                          <h1>Scented Candle Collection</h1>
+                          <h4 style="font-weight:1000 ;">A specialist label creating luxury essentials. Ethically crafted with an unwavering
+                          commitment to exceptional quality.</h4>
+                          <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                          <div>
+                              <a href="#"><i class="fa fa-facebook"></i></a>
+                              <a href="#"><i class="fa fa-twitter"></i></a>
+                              <a href="#"><i class="fa fa-pinterest"></i></a>
+                              <a href="#"><i class="fa fa-instagram"></i></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
   </div>
+</section> {% endcomment %}
+
+
+
+
+<!-- needs to change background-color of all screen -->
+
+
+    
+
+
+  <div class="row">
+    {% for product in products %}
+      <div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+        <a style="color:black;" href="/product/{{product.productid}}">  
+          <div class="product"> <img src="{{product.image}}" alt=""> </a>
+            <ul class="d-flex align-items-center justify-content-center list-unstyled icons">
+              <div >
+                <input type="hidden" value="1" class="form-control product-qty-{{product.productid}}" id="productQty" />
+                <input type="hidden" class="product-image-{{product.productid}}" value="{{product.image}}" />
+                <input type="hidden" class="product-id-{{product.productid}}" value="{{product.productid}}" />
+                <input type="hidden" class="product-pname-{{product.productid}}" value="{{product.pname}}" />
+                <input type="hidden" class="product-price-{{product.productid}}" value="{{product.price}}" />
+                <div class="text-center"><button class="icon add-to-cart" style="border:none" data-index="{{product.productid}}"><span class="fas fa-shopping-bag"></span></button></div>
+              </div>
+            </ul>
+          </div>
+          <div class="tag bg-red"></div>
+          <div class="title pt-4 pb-1">{{product.pname}}</div>
+          <div class="price">$ {{product.price}}</div>
+      </div>
+    {% endfor %}
+  </div>
+
 {% endblock %}

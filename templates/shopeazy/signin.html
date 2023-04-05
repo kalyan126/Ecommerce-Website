@@ -27,11 +27,13 @@
                   <div class="h3 font-weight-bold text-danger"> Invalid Credentials!</div>
                 {%endif%}
 
-                <div class="text-center">
-                  <img src="{% static '/images/Logo.png' %}" style="width: 185px;" alt="logo">
-                </div>
+                {% comment %} <div class="text-center">
+                  <h2 class="shopeazy-title" style="font-family:Bungee Shade;color:red;">
+                    Fashion Store
+                  </h2>
+                </div> {% endcomment %}
 
-                <h3 class="mb-5">Sign in</h3>
+                <h3 class="mb-5" style="font-family:Bungee Shade;color:green;">Sign in to Store</h3>
 
                 <div class="form-outline mb-4">
                   <input type="text" id="userid" name="userid" required placeholder="UserId" class="form-control form-control-lg" /><br>
@@ -46,8 +48,8 @@
                 <!-- Checkbox -->
                 <div class="form-check d-flex justify-content-start mb-4">
                   
-                  <input class="form-check-input" type="checkbox" value="" id="form1Example3" style="margin-left: -10px;" />
-                  <label class="form-check-label" for="form1Example3">Remember password&nbsp; </label>
+                  <input class="form-check-input" type="checkbox" value="" id="form1Example3" style="margin-left: -20px;" />
+                  <label class="form-check-label" for="form1Example3" ">Remember password </label>
                 </div>
 
                 <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
