@@ -6,5 +6,3 @@ ShopEazy Shopping Portal
 
 [Software Requirement Specifications](https://uottawa-my.sharepoint.com/personal/adhil030_uottawa_ca/_layouts/15/guestaccess.aspx?docid=0a193ef5a141045b79670974a624ecaa1&authkey=AQ46l3QYCfPrXsylgs5nGts&e=NGNrRw)
 
-Project Report 
-[GNG 5300_Group Project Report.docx](https://github.com/GurjotSinghArora/Online-Shopping-App/files/10249459/GNG.5300_Group.Project.Report.docx)
